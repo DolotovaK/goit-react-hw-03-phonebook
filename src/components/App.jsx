@@ -16,8 +16,6 @@ export class App extends Component {
     filter: '',
   };
 
-
-
   onChangeFilter = evt => {
     const { value } = evt.currentTarget;
     this.setState({ filter: value });
@@ -61,15 +59,15 @@ export class App extends Component {
     if (parsedContacts) {
       this.setState({contacts: parsedContacts})
     }
-  }
+  };
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem("contacts", JSON.stringify(this.state.contacts))
     }
-  }
+  };
 
-componentWillUnmount(){}
+  componentWillUnmount() { };
 
   render() {
     const { filter } = this.state

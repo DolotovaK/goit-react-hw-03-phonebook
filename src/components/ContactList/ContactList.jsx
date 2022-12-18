@@ -1,5 +1,6 @@
 import { ContactItem } from "components/ContactItem/ContactItem"
 import css from './ContactList.module.css'
+import {PropTypes} from "prop-types"
 
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
@@ -13,3 +14,8 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
         </ul>
     )
 }   
+
+ContactList.propTypes = {
+    contacts: PropTypes.shape({}),
+    onDelete: PropTypes.func,
+}

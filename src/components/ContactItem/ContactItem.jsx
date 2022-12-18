@@ -1,4 +1,5 @@
 import css from './ContactItem.module.css'; 
+import {PropTypes} from "prop-types"
 
 export const ContactItem = ({ contact: { name, number, id }, onDelete }) => {
   return (
@@ -14,3 +15,8 @@ export const ContactItem = ({ contact: { name, number, id }, onDelete }) => {
     </>
   );
 };
+
+ContactItem.propTypes = {
+  contact: PropTypes.object,
+  onDelete: PropTypes.func,
+}
